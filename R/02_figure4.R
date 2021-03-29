@@ -23,11 +23,12 @@ library(extrafont)
 library(hrbrthemes)
 library(scales)
 library(ggpubr)
+library(here)
 
 # 1) Read meteo data
 ### CHEGET ###
 # Data from colleagues
-all_meteo <- readxl::read_xlsx("data/raw/meteo/toropov_CHEGET-TERSKOL.xlsx",
+all_meteo <- readxl::read_xlsx(here("data","raw","meteo","toropov_CHEGET-TERSKOL.xlsx"),
                                skip = 2,
                                range = "A3:F4021") %>% 
   set_colnames(c("date", "t_terskol", "p_terskol", "h_terskol",
@@ -35,7 +36,7 @@ all_meteo <- readxl::read_xlsx("data/raw/meteo/toropov_CHEGET-TERSKOL.xlsx",
   mutate(date = as_date(date))
 
 # Data parsed from http://www.pogodaiklimat.ru/
-cheget_pik <- read_xlsx("data/raw/meteo/pik_CHEGET.xlsx") %>%
+cheget_pik <- read_xlsx(here("data","raw","meteo","pik_CHEGET.xlsx")) %>%
   mutate(date = with_tz(date, "Europe/Moscow")) %>% 
   arrange(date) %>% 
   dplyr::select(date, temp, prec) %>%
@@ -75,7 +76,7 @@ cheget_tidy <- cheget %>%
 
 ### TERSKOL ###
 # Data from colleagues
-terskol_toropov <- readxl::read_xlsx("data/raw/meteo/toropov_TERSKOL.xlsx",
+terskol_toropov <- readxl::read_xlsx(here("data","raw","meteo","toropov_TERSKOL.xlsx"),
                                      range = "D1:H15341") %>% 
   dplyr::select(date = 5,
          p_terskol = 2,
@@ -105,7 +106,7 @@ terskol_tidy <- terskol_toropov %>%
 ### MESTIA ###
 # Load data from NOAA
 # https://www.ncdc.noaa.gov/cdo-web/datatools/findstation
-mestia_noaa <- read_csv("data/raw/meteo/noaa_MESTIA.csv") %>% 
+mestia_noaa <- read_csv(here("data","raw","meteo","noaa_MESTIA.csv")) %>% 
   select(date = DATE, p_mestia = PRCP)
 
 # Prepare dataset
@@ -223,7 +224,7 @@ aeps <- ggpubr::ggarrange(aep_day, aep_week,
                           common.legend = T,
                           legend = "bottom")
 
-ggsave("figures/fig4_aep.png",
+ggsave(here("figures", "fig4_aep.png"),
        aeps,
        dpi = 500,
        w = 10,
