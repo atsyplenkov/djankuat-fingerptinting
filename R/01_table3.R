@@ -13,17 +13,17 @@
 # (cf. Fig. 1) for the period 2015–2019.  
 #
 ################################################################################
-library(tidyverse)
-library(magrittr)
-library(lubridate)
-library(pangaear)
-library(readxl)
-library(extrafont)
-library(loadflux)
-library(scales)
-library(repmis)
-library(writexl)
-library(here)
+library(tidyverse) # CRAN v1.3.0
+library(magrittr)  # CRAN v2.0.1
+library(lubridate) # CRAN v1.7.10
+library(pangaear)  # CRAN v1.0.0
+library(readxl)    # CRAN v1.3.1
+library(extrafont) # CRAN v0.17
+library(loadflux)  # Github v0.0.1 (https://github.com/atsyplenkov/loadflux)
+library(scales)    # CRAN v1.1.1
+library(repmis)    # CRAN v0.5
+library(writexl)   # CRAN v1.3.1
+library(here)      # CRAN v1.0.1
 
 repmis::source_data("https://github.com/atsyplenkov/intra-event-djankuat/blob/master/data/tidy/djan17.Rdata?raw=true")
 repmis::source_data("https://github.com/atsyplenkov/intra-event-djankuat/blob/master/data/tidy/ssc-ntu_formula.Rdata?raw=true")
@@ -114,7 +114,7 @@ rain %>%
   arrange(datetime) %>% 
   mutate(he = zoo::na.locf(he)) -> djan_hydro
 
-# Create a column where an effect of rain on events will be described:
+                   # Create a column where an effect of rain on events will be described:
 # SOURCE: https://stackoverflow.com/a/51884231/9300556
 # TRUE - if there was rainfall during measurement
 # FALSE - if there was no rain at all

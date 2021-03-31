@@ -13,17 +13,17 @@
 # stations   
 #
 ################################################################################
-library(tidyverse)
-library(magrittr)
-library(lubridate)
-library(zoo)
-library(fasstr)
-library(readxl)
-library(extrafont)
-library(hrbrthemes)
-library(scales)
-library(ggpubr)
-library(here)
+library(tidyverse)  # CRAN v1.3.0
+library(magrittr)   # CRAN v2.0.1
+library(lubridate)  # CRAN v1.7.10
+library(zoo)        # CRAN v1.8-8
+library(fasstr)     # CRAN v0.3.2
+library(readxl)     # CRAN v1.3.1
+library(extrafont)  # CRAN v0.17
+library(hrbrthemes) # CRAN v0.8.0
+library(scales)     # CRAN v1.1.1
+library(ggpubr)     # CRAN v0.4.0
+library(here)       # CRAN v1.0.1
 
 # 1) Read meteo data
 ### CHEGET ###
