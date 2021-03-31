@@ -219,11 +219,13 @@ aep_day <- results_day$Freq_Fitted_Quantiles %>%
   hrbrthemes::scale_color_ft(name = "Meteostation") +
   labs(subtitle = "(a)")
 
+# Combine plots
 aeps <- ggpubr::ggarrange(aep_day, aep_week,
                           ncol = 2,
                           common.legend = T,
                           legend = "bottom")
 
+# Save
 ggsave(here("figures", "fig4_aep.png"),
        aeps,
        dpi = 500,
