@@ -11,7 +11,7 @@ For a deep introduction to the study, please refer to:
 
 Full text of the paper is available [here][doi].
 
-To replicate main results, follow the instructions in `R` directory and, of course, feel free to explore in depth the chunks of code in "R" directory. 
+To replicate main results, follow the instructions in `R` directory and, of course, feel free to explore in depth the chunks of code. 
 
 Follow us on Twitter: [@atsyplen][ats], [@MatthiasVanmae1][mvm].
 
