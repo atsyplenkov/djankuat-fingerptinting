@@ -39,3 +39,4 @@ The names of the scripts are quite indicative, and each script is reasonably com
 [fingerpro]: https://doi.org/10.1007/s11269-020-02650-0
 [jss]: https://doi.org/10.1007/s11368-020-02633-z
 [piahs]: https://doi.org/10.5194/piahs-381-87-2019
+[arch]: https://github.com/atsyplenkov/djankuat-fingerptinting/archive/refs/heads/master.zip
