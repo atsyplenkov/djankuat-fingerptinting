@@ -13,6 +13,7 @@
 ################################################################################
 
 # install pacman to streamline further package installation
+# solution by Ilya Kashnitsky from: https://github.com/ikashnitsky/the-lancet-2018/blob/master/R/0-prepare-r-session.R
 if (!require("pacman", character.only = TRUE)){
   install.packages("pacman", dep = TRUE)
   if (!require("pacman", character.only = TRUE))
