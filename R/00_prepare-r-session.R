@@ -43,7 +43,6 @@ pkgs <- c(
   "ggpubr"
 )
 
-
 # install the missing packages
 # only run if at least one package is missing
 if(!sum(!p_isinstalled(pkgs))==0){
